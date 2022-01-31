@@ -4,6 +4,7 @@
   "description": "[lichess-api.yaml](https://github.com/lichess-org/api/blob/master/doc/specs/lichess-api.yaml)",
   "main": "index.js",
   "scripts": {
+    "createtypes": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/audiBookning/lichess-openapi/issues"
   },
-  "homepage": "https://github.com/audiBookning/lichess-openapi#readme"
+  "homepage": "https://github.com/audiBookning/lichess-openapi#readme",
+  "devDependencies": {
+    "openapi-codegen-typescript": "^0.1.26"
+  }
 }
