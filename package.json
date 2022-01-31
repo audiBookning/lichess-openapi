@@ -2,9 +2,10 @@
   "name": "lichess-openapi",
   "version": "1.0.0",
   "description": "[lichess-api.yaml](https://github.com/lichess-org/api/blob/master/doc/specs/lichess-api.yaml)",
-  "main": "index.js",
+  "main": "sta.js",
   "scripts": {
-    "createtypes": "node index.js",
+    "createtypes-oct": "node src/index.js",
+    "createtypes-sta": "node src/sta.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/audiBookning/lichess-openapi#readme",
   "devDependencies": {
-    "openapi-codegen-typescript": "^0.1.26"
-  }
+    "openapi-codegen-typescript": "^0.1.26",
+    "swagger-typescript-api": "^9.3.1"
+  },
+  "dependencies": {}
 }

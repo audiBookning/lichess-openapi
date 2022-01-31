@@ -110,9 +110,7 @@
         "operationId": "apiUsersStatus",
         "summary": "Get real-time users status",
         "description": "Read the `online`, `playing` and `streaming` flags of several users.\n\nThis API is very fast and cheap on lichess side.\nSo you can call it quite often (like once every 5 seconds).\n\nUse it to track players and know when they're connected on lichess and playing games.\n",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "parameters": [
           {
@@ -161,34 +159,19 @@
                         "type": "string"
                       },
                       "title": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
+                        "type": ["string", "null"]
                       },
                       "online": {
-                        "type": [
-                          "boolean",
-                          "null"
-                        ]
+                        "type": ["boolean", "null"]
                       },
                       "playing": {
-                        "type": [
-                          "boolean",
-                          "null"
-                        ]
+                        "type": ["boolean", "null"]
                       },
                       "streaming": {
-                        "type": [
-                          "boolean",
-                          "null"
-                        ]
+                        "type": ["boolean", "null"]
                       },
                       "patron": {
-                        "type": [
-                          "boolean",
-                          "null"
-                        ]
+                        "type": ["boolean", "null"]
                       }
                     }
                   },
@@ -218,9 +201,7 @@
       "get": {
         "operationId": "player",
         "summary": "Get all top 10",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "description": "Get the top 10 players for each speed and variant.\n\nSee <https://lichess.org/player>.\n",
         "responses": {
@@ -241,9 +222,7 @@
       "get": {
         "operationId": "playerTopNbPerfType",
         "summary": "Get one leaderboard",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "description": "Get the leaderboard for a single speed or variant (a.k.a. `perfType`).\nThere is no leaderboard for correspondence or puzzles.\n\nSee <https://lichess.org/player/top/200/bullet>.\n",
         "parameters": [
@@ -312,9 +291,7 @@
         "operationId": "apiUser",
         "summary": "Get user public data",
         "description": "Read public data of a user.\n",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "parameters": [
           {
@@ -353,9 +330,7 @@
         "operationId": "apiUserRatingHistory",
         "summary": "Get rating history of a user",
         "description": "Read rating history of a user, for all perf types.\nThere is at most one entry per day.\nFormat of an entry is `[year, month, day, rating]`.\n`month` starts at zero (January).\n",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "parameters": [
           {
@@ -394,9 +369,7 @@
         "operationId": "apiUserPerf",
         "summary": "Get performance statistics of a user",
         "description": "Read performance statistics of a user, for a single performance.\nSimilar to the [performance pages on the website](https://lichess.org/@/thibault/perf/bullet).\n",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "parameters": [
           {
@@ -443,9 +416,7 @@
         "operationId": "apiUserActivity",
         "summary": "Get user activity",
         "description": "Read data to generate the activity feed of a user.\n",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "parameters": [
           {
@@ -482,9 +453,7 @@
         "operationId": "apiPuzzleDaily",
         "summary": "Get the daily puzzle",
         "description": "Get the daily Lichess puzzle in JSON format.\n\nAlternatively, you can [post it in your slack workspace](https://lichess.org/daily-puzzle-slack).\n",
-        "tags": [
-          "Puzzles"
-        ],
+        "tags": ["Puzzles"],
         "security": [],
         "responses": {
           "200": {
@@ -513,14 +482,10 @@
         "operationId": "apiPuzzleActivity",
         "summary": "Get your puzzle activity",
         "description": "Download your puzzle activity in [ndjson](#section/Introduction/Streaming-with-ND-JSON) format.\n\nPuzzle activity is sorted by reverse chronological order (most recent first)\n\nWe recommend streaming the response, for it can be very long.\n",
-        "tags": [
-          "Puzzles"
-        ],
+        "tags": ["Puzzles"],
         "security": [
           {
-            "OAuth2": [
-              "puzzle:read"
-            ]
+            "OAuth2": ["puzzle:read"]
           }
         ],
         "parameters": [
@@ -561,14 +526,10 @@
         "operationId": "apiPuzzleDashboard",
         "summary": "Get your puzzle dashboard",
         "description": "Download your [puzzle dashboard](https://lichess.org/training/dashboard/30/dashboard) as JSON.\n\nAlso includes all puzzle themes played, with aggregated results.\n\nAllows re-creating the [improvement/strengths](https://lichess.org/training/dashboard/30/improvementAreas) interfaces.\n",
-        "tags": [
-          "Puzzles"
-        ],
+        "tags": ["Puzzles"],
         "security": [
           {
-            "OAuth2": [
-              "puzzle:read"
-            ]
+            "OAuth2": ["puzzle:read"]
           }
         ],
         "parameters": [
@@ -610,9 +571,7 @@
         "operationId": "apiStormDashboard",
         "summary": "Get the storm dashboard of a player",
         "description": "Download the [storm dashboard](https://lichess.org/storm/dashboard/mrbasso) of any player as JSON.\n\nContains the aggregated highscores, and the history of storm runs aggregated by days.\n\nUse `?days=0` if you only care about the highscores.\n",
-        "tags": [
-          "Puzzles"
-        ],
+        "tags": ["Puzzles"],
         "security": [],
         "parameters": [
           {
@@ -662,9 +621,7 @@
       "post": {
         "operationId": "apiUsers",
         "summary": "Get users by ID",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "description": "Get up to 300 users by their IDs. Users are returned in the same order as the IDs.\n\nThe method is `POST` so a longer list of IDs can be sent in the request body.\n",
         "requestBody": {
@@ -709,9 +666,7 @@
         "operationId": "accountMe",
         "summary": "Get my profile",
         "description": "Public informations about the logged in user.\n",
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "security": [
           {
             "OAuth2": []
@@ -744,14 +699,10 @@
         "operationId": "accountEmail",
         "summary": "Get my email address",
         "description": "Read the email address of the logged in user.\n",
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "security": [
           {
-            "OAuth2": [
-              "email:read"
-            ]
+            "OAuth2": ["email:read"]
           }
         ],
         "responses": {
@@ -788,14 +739,10 @@
         "operationId": "account",
         "summary": "Get my preferences",
         "description": "Read the preferences of the logged in user.\n\n- <https://lichess.org/account/preferences/game-display>\n- <https://github.com/ornicar/lila/blob/master/modules/pref/src/main/Pref.scala>\n",
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "security": [
           {
-            "OAuth2": [
-              "preference:read"
-            ]
+            "OAuth2": ["preference:read"]
           }
         ],
         "responses": {
@@ -833,14 +780,10 @@
         "operationId": "accountKid",
         "summary": "Get my kid mode status",
         "description": "Read the kid mode status of the logged in user.\n\n- <https://lichess.org/account/kid>\n",
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "security": [
           {
-            "OAuth2": [
-              "preference:read"
-            ]
+            "OAuth2": ["preference:read"]
           }
         ],
         "responses": {
@@ -875,14 +818,10 @@
         "operationId": "accountKidPost",
         "summary": "Set my kid mode status",
         "description": "Set the kid mode status of the logged in user.\n\n- <https://lichess.org/account/kid>\n",
-        "tags": [
-          "Account"
-        ],
+        "tags": ["Account"],
         "security": [
           {
-            "OAuth2": [
-              "preference:write"
-            ]
+            "OAuth2": ["preference:write"]
           }
         ],
         "parameters": [
@@ -924,9 +863,7 @@
         "operationId": "gamePgn",
         "summary": "Export one game",
         "description": "Download one game in either PGN or JSON format.\n\nOngoing games have their last 3 moves omitted, after move 5.\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [],
         "parameters": [
           {
@@ -1042,9 +979,7 @@
         "operationId": "apiUserCurrentGame",
         "summary": "Export ongoing game of a user",
         "description": "Download the ongoing game, or the last game played, of a user.\nAvailable in either PGN or JSON format.\nIf the game is ongoing, the 3 last moves are omitted.\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [],
         "parameters": [
           {
@@ -1159,9 +1094,7 @@
         "operationId": "apiGamesUser",
         "summary": "Export games of a user",
         "description": "Download all games of any user in PGN or [ndjson](#section/Introduction/Streaming-with-ND-JSON) format.\n\nGames are sorted by reverse chronological order (most recent first)\n\nWe recommend streaming the response, for it can be very long.\n<https://lichess.org/@/german11> for instance has more than 500,000 games.\n\nThe game stream is throttled, depending on who is making the request:\n  - Anonymous request: 20 games per second\n  - [OAuth2 authenticated](#section/Authentication) request: 30 games per second\n  - Authenticated, downloading your own games: 60 games per second\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [
           {
             "OAuth2": []
@@ -1241,10 +1174,7 @@
             "description": "[Filter] Only games played as this color.",
             "schema": {
               "type": "string",
-              "enum": [
-                "white",
-                "black"
-              ]
+              "enum": ["white", "black"]
             }
           },
           {
@@ -1341,10 +1271,7 @@
             "schema": {
               "type": "string",
               "default": "dateDesc",
-              "enum": [
-                "dateAsc",
-                "dateDesc"
-              ]
+              "enum": ["dateAsc", "dateDesc"]
             }
           }
         ],
@@ -1380,9 +1307,7 @@
         "operationId": "gamesExportIds",
         "summary": "Export games by IDs",
         "description": "Download games by IDs in PGN or [ndjson](#section/Introduction/Streaming-with-ND-JSON) format, depending on the request Accept header.\n\nGames are sorted by reverse chronological order (most recent first)\n\nThe method is `POST` so a longer list of IDs can be sent in the request body.\n\n300 IDs can be submitted.\n\nOngoing games have their last 3 moves omitted, after move 5.\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [],
         "requestBody": {
           "description": "Game IDs separated by commas. Up to 300.",
@@ -1484,9 +1409,7 @@
         "operationId": "gamesByUsers",
         "summary": "Stream games of users",
         "description": "Stream the games played between a list of users, in real time.\nOnly games where **both players** are part of the list are included.\n\nBy default, games are only sent to the stream when they start.\nTo also get all ongoing games at the beginning of the stream, use the `withCurrentGames` flag.\n\nMaximum number of users: 300.\n\nGames are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n\nThe method is `POST` so a longer list of IDs can be sent in the request body.\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [],
         "requestBody": {
           "description": "Up to 300 user IDs separated by commas.",
@@ -1561,9 +1484,7 @@
         "operationId": "apiAccountPlaying",
         "summary": "Get my ongoing games",
         "description": "Get the ongoing games of the current user.\nReal-time and correspondence games are included.\nThe most urgent games are listed first.\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [
           {
             "OAuth2": []
@@ -1632,9 +1553,7 @@
         "operationId": "streamGame",
         "summary": "Stream moves of a game",
         "description": "Stream positions and moves of any ongoing game, in [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n\nA description of the game is sent as a first message.\nThen a message is sent each time a move is played.\nFinally a description of the game is sent when it finishes, and the stream is closed.\n\nAfter move 5, the stream intentionally remains 3 moves behind the game status, as to prevent cheat bots from using this API.\n\nNo more than 8 game streams can be opened at the same time from the same IP address.\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [],
         "parameters": [
           {
@@ -1666,9 +1585,7 @@
         "operationId": "gameImport",
         "summary": "Import one game",
         "description": "Import a game from PGN. See <https://lichess.org/paste>.\n\nRate limiting: 200 games per hour for OAuth requests, 100 games per hour for anonymous requests.\n\nTo broadcast ongoing games, consider [pushing to a broadcast instead](#operation/broadcastPush).\n",
-        "tags": [
-          "Games"
-        ],
+        "tags": ["Games"],
         "security": [
           {
             "OAuth2": []
@@ -1721,9 +1638,7 @@
         "operationId": "tvChannels",
         "summary": "Get current TV games",
         "description": "Get basic info about the best games being played for each speed and variant,\nbut also computer games and bot games.\n\nSee [lichess.org/tv](https://lichess.org/tv).\n",
-        "tags": [
-          "TV"
-        ],
+        "tags": ["TV"],
         "security": [],
         "responses": {
           "200": {
@@ -1883,9 +1798,7 @@
         "operationId": "tvFeed",
         "summary": "Stream current TV game",
         "description": "Stream positions and moves of the current [TV game](https://lichess.org/tv) in [ndjson](#section/Introduction/Streaming-with-ND-JSON).\nA summary of the game is sent as a first message, and when the featured game changes.\n\nTry it with `curl https://lichess.org/api/tv/feed`.\n",
-        "tags": [
-          "TV"
-        ],
+        "tags": ["TV"],
         "security": [],
         "responses": {
           "200": {
@@ -1933,9 +1846,7 @@
         "operationId": "tvChannelGames",
         "summary": "Get best ongoing games of a TV channel",
         "description": "Get a list of ongoing games for a given TV channel. Similar to [lichess.org/games](https://lichess.org/games).\n\nAvailable in PGN or [ndjson](#section/Introduction/Streaming-with-ND-JSON) format, depending on the request Accept header.\n",
-        "tags": [
-          "TV"
-        ],
+        "tags": ["TV"],
         "security": [],
         "parameters": [
           {
@@ -2028,9 +1939,7 @@
         "operationId": "apiTournament",
         "summary": "Get current tournaments",
         "description": "Get recently finished, ongoing, and upcoming tournaments.\n\nThis API is used to display the [Lichess tournament schedule](https://lichess.org/tournament).\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [],
         "responses": {
           "200": {
@@ -2057,14 +1966,10 @@
         "operationId": "apiTournamentPost",
         "summary": "Create a new Arena tournament",
         "description": "Create a public or private Arena tournament.\n\nThis endpoint mirrors the form on <https://lichess.org/tournament/new>.\n\nYou can create up to 12 public tournaments per day, or 24 private tournaments.\n\nA team battle can be created by specifying the `teambBattleByTeam` argument.\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "requestBody": {
@@ -2086,26 +1991,8 @@
                     "minimum": 0,
                     "maximum": 60,
                     "enum": [
-                      0,
-                      0.25,
-                      0.5,
-                      0.75,
-                      1,
-                      1.5,
-                      2,
-                      3,
-                      4,
-                      5,
-                      6,
-                      7,
-                      10,
-                      15,
-                      20,
-                      25,
-                      30,
-                      40,
-                      50,
-                      60
+                      0, 0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 5, 6, 7, 10, 15, 20,
+                      25, 30, 40, 50, 60
                     ]
                   },
                   "clockIncrement": {
@@ -2189,11 +2076,7 @@
                     "description": "Minimum number of rated games required to join."
                   }
                 },
-                "required": [
-                  "clockTime",
-                  "clockIncrement",
-                  "minutes"
-                ]
+                "required": ["clockTime", "clockIncrement", "minutes"]
               }
             }
           }
@@ -2246,9 +2129,7 @@
         "operationId": "tournament",
         "summary": "Get info about an Arena tournament",
         "description": "Get detailed info about recently finished, current, or upcoming tournament's duels, player standings, and other info.\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [],
         "parameters": [
           {
@@ -2289,14 +2170,10 @@
         "operationId": "apiTournamentUpdate",
         "summary": "Update an Arena tournament",
         "description": "Update an Arena tournament.\n\nBe mindful not to make important changes to ongoing tournaments.\n\nCan be used to update a team battle.\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "requestBody": {
@@ -2318,26 +2195,8 @@
                     "minimum": 0,
                     "maximum": 60,
                     "enum": [
-                      0,
-                      0.25,
-                      0.5,
-                      0.75,
-                      1,
-                      1.5,
-                      2,
-                      3,
-                      4,
-                      5,
-                      6,
-                      7,
-                      10,
-                      15,
-                      20,
-                      25,
-                      30,
-                      40,
-                      50,
-                      60
+                      0, 0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 5, 6, 7, 10, 15, 20,
+                      25, 30, 40, 50, 60
                     ]
                   },
                   "clockIncrement": {
@@ -2413,11 +2272,7 @@
                     "description": "Minimum number of rated games required to join."
                   }
                 },
-                "required": [
-                  "clockTime",
-                  "clockIncrement",
-                  "minutes"
-                ]
+                "required": ["clockTime", "clockIncrement", "minutes"]
               }
             }
           }
@@ -2459,14 +2314,10 @@
         "operationId": "apiTournamentJoin",
         "summary": "Join an Arena tournament",
         "description": "Join an Arena tournament, possibly with a password and/or a team.\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -2539,14 +2390,10 @@
         "operationId": "apiTournamentWithdraw",
         "summary": "Pause or leave an Arena tournament",
         "description": "Leave a future Arena tournament, or take a break on an ongoing Arena tournament.\nIt's possible to join again later. Points and streaks are preserved.\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -2598,14 +2445,10 @@
         "operationId": "apiTournamentTerminate",
         "summary": "Terminate an Arena tournament",
         "description": "Terminate an Arena tournament\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -2657,14 +2500,10 @@
         "operationId": "apiTournamentTeamBattlePost",
         "summary": "Update a team battle",
         "description": "Set the teams and number of leaders of a team battle.\n\nTo update the other attributes of a team battle, use the [tournament update endpoint](#operation/apiTournamentUpdate).\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -2694,10 +2533,7 @@
                     "description": "Number team leaders per team."
                   }
                 },
-                "required": [
-                  "teams",
-                  "nbLeaders"
-                ]
+                "required": ["teams", "nbLeaders"]
               }
             }
           }
@@ -2739,9 +2575,7 @@
         "operationId": "gamesByTournament",
         "summary": "Export games of an Arena tournament",
         "description": "Download games of a tournament in PGN or [ndjson](#section/Introduction/Streaming-with-ND-JSON) format.\n\nGames are sorted by reverse chronological order (most recent first)\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [],
         "parameters": [
           {
@@ -2848,9 +2682,7 @@
         "operationId": "resultsByTournament",
         "summary": "Get results of an Arena tournament",
         "description": "Players of an Arena tournament, with their score and performance, sorted by rank (best first).\n\n**Players are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON)**, i.e. one JSON object per line.\n\nIf called on an ongoing tournament, results can be inconsistent\ndue to ranking changes while the players are being streamed.\nUse on finished tournaments for guaranteed consistency.\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [],
         "parameters": [
           {
@@ -2907,9 +2739,7 @@
         "operationId": "teamsByTournament",
         "summary": "Get team standing of a team battle",
         "description": "Teams of a team battle tournament, with top players, sorted by rank (best first).\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [],
         "parameters": [
           {
@@ -2973,9 +2803,7 @@
         "operationId": "apiUserNameTournamentCreated",
         "summary": "Get tournaments created by a user",
         "description": "Get all tournaments created by a given user.\n\nTournaments are sorted by reverse chronological order of start date (last starting first).\n\nTournaments are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n",
-        "tags": [
-          "Arena tournaments"
-        ],
+        "tags": ["Arena tournaments"],
         "security": [],
         "parameters": [
           {
@@ -2993,11 +2821,7 @@
             "description": "Include tournaments in the given status: \"Created\" (10), \"Started\" (20), \"Finished\" (30)\n\nYou can add this parameter more than once to include tournaments in different statuses. \n\nExample: `?status=10&status=20`\n",
             "schema": {
               "type": "integer",
-              "enum": [
-                10,
-                20,
-                30
-              ]
+              "enum": [10, 20, 30]
             },
             "required": false
           }
@@ -3029,14 +2853,10 @@
         "operationId": "apiSwissNew",
         "summary": "Create a new Swiss tournament",
         "description": "Create a Swiss tournament for your team.\n\nThis endpoint mirrors the Swiss tournament form from your team pagee.\n\nYou can create up to 12 tournaments per day.\n",
-        "tags": [
-          "Swiss tournaments"
-        ],
+        "tags": ["Swiss tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -3111,11 +2931,7 @@
                     "default": 20
                   }
                 },
-                "required": [
-                  "clock.limit",
-                  "clock.increment",
-                  "nbRounds"
-                ]
+                "required": ["clock.limit", "clock.increment", "nbRounds"]
               }
             }
           }
@@ -3157,14 +2973,10 @@
         "operationId": "apiSwissUpdate",
         "summary": "Update a Swiss tournament.",
         "description": "Update a Swiss tournament.\n\nBe mindful not to make important changes to ongoing tournaments.\n",
-        "tags": [
-          "Swiss tournaments"
-        ],
+        "tags": ["Swiss tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -3240,11 +3052,7 @@
                     "default": 20
                   }
                 },
-                "required": [
-                  "clock.limit",
-                  "clock.increment",
-                  "nbRounds"
-                ]
+                "required": ["clock.limit", "clock.increment", "nbRounds"]
               }
             }
           }
@@ -3296,14 +3104,10 @@
         "operationId": "apiSwissJoin",
         "summary": "Join a Swiss tournament",
         "description": "Join a Swiss tournament, possibly with a password.\n",
-        "tags": [
-          "Swiss tournaments"
-        ],
+        "tags": ["Swiss tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -3372,14 +3176,10 @@
         "operationId": "apiSwissTerminate",
         "summary": "Terminate a Swiss tournament",
         "description": "Terminate a Swiss tournament\n",
-        "tags": [
-          "Swiss tournaments"
-        ],
+        "tags": ["Swiss tournaments"],
         "security": [
           {
-            "OAuth2": [
-              "tournament:write"
-            ]
+            "OAuth2": ["tournament:write"]
           }
         ],
         "parameters": [
@@ -3431,9 +3231,7 @@
         "operationId": "swissTrf",
         "summary": "Export TRF of a Swiss tournament",
         "description": "Download a tournament in the Tournament Report File format, the FIDE standard.\n\nDocumentation: <https://www.fide.com/FIDE/handbook/C04Annex2_TRF16.pdf>\n\nExample: <https://lichess.org/swiss/j8rtJ5GL.trf>\n",
-        "tags": [
-          "Swiss tournaments"
-        ],
+        "tags": ["Swiss tournaments"],
         "security": [],
         "parameters": [
           {
@@ -3473,9 +3271,7 @@
         "operationId": "gamesBySwiss",
         "summary": "Export games of a Swiss tournament",
         "description": "Download games of a swiss tournament in PGN or [ndjson](#section/Introduction/Streaming-with-ND-JSON) format.\n\nGames are sorted by reverse chronological order (last round first)\n",
-        "tags": [
-          "Swiss tournaments"
-        ],
+        "tags": ["Swiss tournaments"],
         "security": [],
         "parameters": [
           {
@@ -3574,9 +3370,7 @@
         "operationId": "resultsBySwiss",
         "summary": "Get results of a swiss tournament",
         "description": "Players of a swiss tournament, with their score and performance, sorted by rank (best first).\n\nPlayers are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n\nIf called on an ongoing tournament, results can be inconsistent\ndue to ranking changes while the players are being streamed.\nUse on finished tournaments for guaranteed consistency.\n",
-        "tags": [
-          "Swiss tournaments"
-        ],
+        "tags": ["Swiss tournaments"],
         "security": [],
         "parameters": [
           {
@@ -3633,10 +3427,7 @@
         "operationId": "apiTeamSwiss",
         "summary": "Get team swiss tournaments",
         "description": "Get all swiss tournaments of a team.\n\nTournaments are sorted by reverse chronological order of start date (last starting first).\n\nTournaments are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n",
-        "tags": [
-          "Teams",
-          "Swiss tournaments"
-        ],
+        "tags": ["Teams", "Swiss tournaments"],
         "security": [],
         "parameters": [
           {
@@ -3686,9 +3477,7 @@
         "operationId": "studyChapterPgn",
         "summary": "Export one study chapter",
         "description": "Download one study chapter in PGN format.\n",
-        "tags": [
-          "Studies"
-        ],
+        "tags": ["Studies"],
         "security": [],
         "parameters": [
           {
@@ -3756,9 +3545,7 @@
         "operationId": "studyAllChaptersPgn",
         "summary": "Export all chapters",
         "description": "Download all chapters of a study in PGN format.\n",
-        "tags": [
-          "Studies"
-        ],
+        "tags": ["Studies"],
         "security": [],
         "parameters": [
           {
@@ -3825,14 +3612,10 @@
         "operationId": "studyExportAllPgn",
         "summary": "Export all studies of a user",
         "description": "Download all chapters of all studies of a user in PGN format.\n\nIf authenticated, then all public, unlisted, and private studies are included.\n\nIf not, only public, listed studies are included.\n",
-        "tags": [
-          "Studies"
-        ],
+        "tags": ["Studies"],
         "security": [
           {
-            "OAuth2": [
-              "study:read"
-            ]
+            "OAuth2": ["study:read"]
           }
         ],
         "parameters": [
@@ -3892,9 +3675,7 @@
         "operationId": "broadcastIndex",
         "summary": "Get official broadcasts",
         "description": "Get all incoming, ongoing, and finished official broadcasts.\nThe broadcasts are sorted by start date, most recent first.\n\nBroadcasts are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "parameters": [
           {
             "in": "query",
@@ -3937,14 +3718,10 @@
         "operationId": "broadcastTourCreate",
         "summary": "Create a broadcast tournament",
         "description": "Create a new broadcast tournament to relay external games.\nThis endpoint accepts the same form data as the [web form](https://lichess.org/broadcast/new).\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [
           {
-            "OAuth2": [
-              "study:write"
-            ]
+            "OAuth2": ["study:write"]
           }
         ],
         "requestBody": {
@@ -3971,10 +3748,7 @@
                     "description": "For Lichess internal usage only. You are not allowed to use this flag. If you do it, we will have to call the police."
                   }
                 },
-                "required": [
-                  "name",
-                  "description"
-                ]
+                "required": ["name", "description"]
               }
             }
           }
@@ -4016,14 +3790,10 @@
         "operationId": "broadcastTourGet",
         "summary": "Get your broadcast tournament",
         "description": "Get information about a broadcast tournament.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [
           {
-            "OAuth2": [
-              "study:read"
-            ]
+            "OAuth2": ["study:read"]
           }
         ],
         "parameters": [
@@ -4068,14 +3838,10 @@
         "operationId": "broadcastTourUpdate",
         "summary": "Update your broadcast tournament",
         "description": "Update information about a broadcast tournament that you created.\nThis endpoint accepts the same form data as the web form.\nAll fields must be populated with data. Missing fields will override the broadcast with empty data.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [
           {
-            "OAuth2": [
-              "study:write"
-            ]
+            "OAuth2": ["study:write"]
           }
         ],
         "parameters": [
@@ -4113,10 +3879,7 @@
                     "description": "For Lichess internal usage only. You are not allowed to use this flag. If you do it, we will have to call the police."
                   }
                 },
-                "required": [
-                  "name",
-                  "description"
-                ]
+                "required": ["name", "description"]
               }
             }
           }
@@ -4158,14 +3921,10 @@
         "operationId": "broadcastRoundCreate",
         "summary": "Create a broadcast round",
         "description": "Create a new broadcast round to relay external games.\nThis endpoint accepts the same form data as the web form.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [
           {
-            "OAuth2": [
-              "study:write"
-            ]
+            "OAuth2": ["study:write"]
           }
         ],
         "parameters": [
@@ -4200,9 +3959,7 @@
                     "minimum": 1356998400070
                   }
                 },
-                "required": [
-                  "name"
-                ]
+                "required": ["name"]
               }
             }
           }
@@ -4244,14 +4001,10 @@
         "operationId": "broadcastRoundGet",
         "summary": "Get your broadcast round",
         "description": "Get information about a broadcast round.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [
           {
-            "OAuth2": [
-              "study:read"
-            ]
+            "OAuth2": ["study:read"]
           }
         ],
         "parameters": [
@@ -4305,14 +4058,10 @@
         "operationId": "broadcastRoundUpdate",
         "summary": "Update your broadcast round",
         "description": "Update information about a broadcast round that you created.\nThis endpoint accepts the same form data as the web form.\nAll fields must be populated with data. Missing fields will override the broadcast with empty data.\nFor instance, if you omit `startDate`, then any pre-existing start date will be removed.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [
           {
-            "OAuth2": [
-              "study:write"
-            ]
+            "OAuth2": ["study:write"]
           }
         ],
         "parameters": [
@@ -4347,9 +4096,7 @@
                     "minimum": 1356998400070
                   }
                 },
-                "required": [
-                  "name"
-                ]
+                "required": ["name"]
               }
             }
           }
@@ -4391,14 +4138,10 @@
         "operationId": "broadcastPush",
         "summary": "Push PGN to your broadcast round",
         "description": "Update your broadcast with new PGN.\nOnly for broadcast without a source URL.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [
           {
-            "OAuth2": [
-              "study:write"
-            ]
+            "OAuth2": ["study:write"]
           }
         ],
         "parameters": [
@@ -4453,9 +4196,7 @@
         "operationId": "broadcastStreamRoundPgn",
         "summary": "Stream an ongoing broadcast tournament as PGN",
         "description": "This streaming endpoint first sends all games of a broadcast tournament in PGN format.\n\nThen, it waits for new moves to be played. As soon as it happens, the entire PGN of the game is sent to the stream.\n\nThe stream will also send PGNs when games are added to the tournament.\n\nThis is the best way to get updates about an ongoing tournament. Streaming means no polling,\nand no pollings means no latency, and minimum impact on the server.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [],
         "parameters": [
           {
@@ -4495,9 +4236,7 @@
         "operationId": "broadcastRoundPgn",
         "summary": "Export one round as PGN",
         "description": "Download all games of a single round of a broadcast tournament in PGN format.\n\nYou *could* poll this endpoint to get updates about a tournament, but it would be slow,\nand very inneficient.\n\nInstead, consider [streaming the tournament](#operation/broadcastStreamRoundPgn) to get\na new PGN every time a game is updated, in real-time.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [],
         "parameters": [
           {
@@ -4537,9 +4276,7 @@
         "operationId": "broadcastAllRoundsPgn",
         "summary": "Export all rounds as PGN",
         "description": "Download all games of all rounds of a broadcast in PGN format.\n\nYou may want to [download only the games of a single round](#operation/broadcastRoundPgn) instead.\n",
-        "tags": [
-          "Broadcasts"
-        ],
+        "tags": ["Broadcasts"],
         "security": [],
         "parameters": [
           {
@@ -4579,9 +4316,7 @@
         "operationId": "apiSimul",
         "summary": "Get current simuls",
         "description": "Get recently finished, ongoing, and upcoming simuls.\n",
-        "tags": [
-          "Simuls"
-        ],
+        "tags": ["Simuls"],
         "security": [],
         "responses": {
           "200": {
@@ -4613,9 +4348,7 @@
         "operationId": "teamShow",
         "summary": "Get a single team",
         "description": "Infos about a team",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [],
         "parameters": [
           {
@@ -4654,9 +4387,7 @@
         "operationId": "teamAll",
         "summary": "Get popular teams",
         "description": "Paginator of the most popular teams.\n",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [],
         "parameters": [
           {
@@ -4704,17 +4435,11 @@
                       "example": 205194
                     },
                     "previousPage": {
-                      "type": [
-                        "number",
-                        "null"
-                      ],
+                      "type": ["number", "null"],
                       "example": 3
                     },
                     "nextPage": {
-                      "type": [
-                        "number",
-                        "null"
-                      ],
+                      "type": ["number", "null"],
                       "example": 5
                     },
                     "nbPages": {
@@ -4734,9 +4459,7 @@
         "operationId": "teamOfUsername",
         "summary": "Teams of a player",
         "description": "All the teams a player is a member of.\n",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [],
         "parameters": [
           {
@@ -4779,9 +4502,7 @@
         "operationId": "teamSearch",
         "summary": "Search teams",
         "description": "Paginator of team search results for a keyword.\n",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [],
         "parameters": [
           {
@@ -4832,15 +4553,10 @@
         "operationId": "teamIdUsers",
         "summary": "Get members of a team",
         "description": "Members are sorted by reverse chronological order of joining the team (most recent first).\nOAuth only required if the list of members is private.\n\nMembers are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n",
-        "tags": [
-          "Users",
-          "Teams"
-        ],
+        "tags": ["Users", "Teams"],
         "security": [
           {
-            "OAuth2": [
-              "team:read"
-            ]
+            "OAuth2": ["team:read"]
           }
         ],
         "parameters": [
@@ -4881,10 +4597,7 @@
         "operationId": "apiTeamArena",
         "summary": "Get team Arena tournaments",
         "description": "Get all Arena tournaments relevant to a team.\n\nTournaments are sorted by reverse chronological order of start date (last starting first).\n\nTournaments are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n",
-        "tags": [
-          "Teams",
-          "Arena tournaments"
-        ],
+        "tags": ["Teams", "Arena tournaments"],
         "security": [],
         "parameters": [
           {
@@ -4937,14 +4650,10 @@
         "operationId": "teamIdJoin",
         "summary": "Join a team",
         "description": "Join a team.\nIf the team requires a password but the `password` field is incorrect,\nthen the call fails with `403 Forbidden`.\nSimilarly, if the team join policy requires a confirmation but the\n`message` parameter is not given, then the call fails with\n`403 Forbidden`.\n",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [
           {
-            "OAuth2": [
-              "team:write"
-            ]
+            "OAuth2": ["team:write"]
           }
         ],
         "parameters": [
@@ -4997,14 +4706,10 @@
         "operationId": "teamIdQuit",
         "summary": "Leave a team",
         "description": "Leave a team.\n- <https://lichess.org/team>\n",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [
           {
-            "OAuth2": [
-              "team:write"
-            ]
+            "OAuth2": ["team:write"]
           }
         ],
         "parameters": [
@@ -5037,14 +4742,10 @@
         "operationId": "teamIdKickUserId",
         "summary": "Kick a user from your team",
         "description": "Kick a member out of one of your teams.\n- <https://lichess.org/team>\n",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [
           {
-            "OAuth2": [
-              "team:write"
-            ]
+            "OAuth2": ["team:write"]
           }
         ],
         "parameters": [
@@ -5086,14 +4787,10 @@
         "operationId": "teamIdPmAll",
         "summary": "Message all members",
         "description": "Send a private message to all members of a team.\nYou must own the team.\n",
-        "tags": [
-          "Teams"
-        ],
+        "tags": ["Teams"],
         "security": [
           {
-            "OAuth2": [
-              "team:write"
-            ]
+            "OAuth2": ["team:write"]
           }
         ],
         "parameters": [
@@ -5160,9 +4857,7 @@
         "operationId": "streamerLive",
         "summary": "Get live streamers",
         "description": "Get basic info about currently streaming users.\n\nThis API is very fast and cheap on lichess side.\nSo you can call it quite often (like once every 5 seconds).\n",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "responses": {
           "200": {
@@ -5181,22 +4876,13 @@
                         "type": "string"
                       },
                       "title": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
+                        "type": ["string", "null"]
                       },
                       "online": {
-                        "type": [
-                          "boolean",
-                          "null"
-                        ]
+                        "type": ["boolean", "null"]
                       },
                       "patron": {
-                        "type": [
-                          "boolean",
-                          "null"
-                        ]
+                        "type": ["boolean", "null"]
                       }
                     }
                   },
@@ -5225,9 +4911,7 @@
         "operationId": "apiCrosstable",
         "summary": "Get crosstable",
         "description": "Get total number of games, and current score, of any two users.\n\nIf the `matchup` flag is provided, and the users are currently playing, also gets the current match game number and scores.\n",
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "security": [],
         "parameters": [
           {
@@ -5282,9 +4966,7 @@
         "operationId": "apiUserFollowing",
         "summary": "Get users followed the logged in user",
         "description": "Users are streamed as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n",
-        "tags": [
-          "Relations"
-        ],
+        "tags": ["Relations"],
         "security": [
           {
             "OAuth2": []
@@ -5317,14 +4999,10 @@
         "operationId": "followUser",
         "summary": "Follow a player",
         "description": "Follow a player, adding them to your list of Lichess friends.\n",
-        "tags": [
-          "Relations"
-        ],
+        "tags": ["Relations"],
         "security": [
           {
-            "OAuth2": [
-              "follow:write"
-            ]
+            "OAuth2": ["follow:write"]
           }
         ],
         "parameters": [
@@ -5357,14 +5035,10 @@
         "operationId": "unfollowUser",
         "summary": "Unfollow a player",
         "description": "Unfollow a player, removing them from your list of Lichess friends.\n",
-        "tags": [
-          "Relations"
-        ],
+        "tags": ["Relations"],
         "security": [
           {
-            "OAuth2": [
-              "follow:write"
-            ]
+            "OAuth2": ["follow:write"]
           }
         ],
         "parameters": [
@@ -5397,17 +5071,10 @@
         "operationId": "apiStreamEvent",
         "summary": "Stream incoming events",
         "description": "\n  Stream the events reaching a lichess user in real time as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n\n  Each line is a JSON object containing a `type` field. Possible values are:\n  - `gameStart` Start of a game\n  - `gameFinish` Completion of a game\n  - `challenge` A player sends you a challenge\n  - `challengeCanceled` A player cancels their challenge to you\n  - `challengeDeclined` The opponent declines your challenge\n \n  When the stream opens, all current challenges and games are sent.",
-        "tags": [
-          "Board",
-          "Bot"
-        ],
+        "tags": ["Board", "Bot"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:read",
-              "bot:play",
-              "board:play"
-            ]
+            "OAuth2": ["challenge:read", "bot:play", "board:play"]
           }
         ],
         "responses": {
@@ -5470,14 +5137,10 @@
         "operationId": "apiBoardSeek",
         "summary": "Create a seek",
         "description": "\n  Create a public seek, to start a game with a random player.\n\n  ### Real-time seek\n\n  Specify the `time` and `increment` clock values.  The response is streamed but doesn't contain any information.\n\n  **Keep the connection open to keep the seek active**.\n\n  If the client closes the connection, the seek is canceled. This way, if the client terminates, the user won't be paired in a game they wouldn't play.\n  When the seek is accepted, or expires, the server closes the connection.\n\n  **Make sure to also have an [Event stream](#operation/apiStreamEvent) open**, to be notified when a game starts.\n  We recommend opening the [Event stream](#operation/apiStreamEvent) first, then the seek stream. This way,\n  you won't miss the game event if the seek is accepted immediately.\n\n  ### Correspondence seek\n\n  Specify the `days` per turn value.  The response is not streamed, it immediately completes with the seek ID. The seek remains active on the server until it is joined by someone.",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "requestBody": {
@@ -5511,14 +5174,7 @@
                   "days": {
                     "type": "integer",
                     "description": "Days per turn. Required for correspondence seeks.",
-                    "enum": [
-                      1,
-                      3,
-                      5,
-                      7,
-                      10,
-                      14
-                    ]
+                    "enum": [1, 3, 5, 7, 10, 14]
                   },
                   "variant": {
                     "$ref": "#/components/schemas/VariantKey"
@@ -5526,11 +5182,7 @@
                   "color": {
                     "type": "string",
                     "description": "The color to play. Better left empty to automatically get 50% white.",
-                    "enum": [
-                      "random",
-                      "white",
-                      "black"
-                    ],
+                    "enum": ["random", "white", "black"],
                     "default": "random"
                   },
                   "ratingRange": {
@@ -5577,14 +5229,10 @@
         "operationId": "boardGameStream",
         "summary": "Stream Board game state",
         "description": " Stream the state of a game being played with the Board API, as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n\nUse this endpoint to get updates about the game in real-time, with a single request.\n\nEach line is a JSON object containing a `type` field. Possible values are:\n  - `gameFull` Full game data. All values are immutable, except for the `state` field.\n  - `gameState` Current state of the game. Immutable values not included. Sent when a move is played, a draw is offered, or when the game ends.\n  - `chatLine` Chat message sent by a user in the `room` \"player\" or \"spectator\".\n\n \nThe first line is always of type `gameFull`.",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "parameters": [
@@ -5662,14 +5310,10 @@
         "operationId": "boardGameMove",
         "summary": "Make a Board move",
         "description": "Make a move in a game being played with the Board API.\n\nThe move can also contain a draw offer/agreement.\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "parameters": [
@@ -5749,14 +5393,10 @@
         "operationId": "boardGameChatPost",
         "summary": "Write in the chat",
         "description": "Post a message to the player or spectator chat, in a game being played with the Board API.\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "requestBody": {
@@ -5768,20 +5408,14 @@
                 "properties": {
                   "room": {
                     "type": "string",
-                    "enum": [
-                      "player",
-                      "spectator"
-                    ]
+                    "enum": ["player", "spectator"]
                   },
                   "text": {
                     "type": "string",
                     "example": "Thank you for the game!"
                   }
                 },
-                "required": [
-                  "room",
-                  "text"
-                ]
+                "required": ["room", "text"]
               }
             }
           }
@@ -5821,14 +5455,10 @@
         "operationId": "boardGameChatGet",
         "summary": "Fetch the game chat",
         "description": "Get the messages posted in the game chat\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "responses": {
@@ -5858,14 +5488,10 @@
         "operationId": "boardGameAbort",
         "summary": "Abort a game",
         "description": "Abort a game being played with the Board API.\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "parameters": [
@@ -5916,14 +5542,10 @@
         "operationId": "boardGameResign",
         "summary": "Resign a game",
         "description": "Resign a game being played with the Board API.\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "parameters": [
@@ -5974,14 +5596,10 @@
         "operationId": "boardGameDraw",
         "summary": "Handle draw offers",
         "description": "Create/accept/decline draw offers.\n- `yes`: Offer a draw, or accept the opponent's draw offer.\n- `no`: Decline a draw offer from the opponent.\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "parameters": [
@@ -6049,14 +5667,10 @@
         "operationId": "boardGameTakeback",
         "summary": "Handle takeback offers",
         "description": "Create/accept/decline takebacks.\n- `yes`: Propose a takeback, or accept the opponent's takeback offer.\n- `no`: Decline a takeback offer from the opponent.\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "parameters": [
@@ -6124,14 +5738,10 @@
         "operationId": "boardGameClaimVictory",
         "summary": "Claim victory of a game",
         "description": "Claim victory when the opponent has left the game for a while.\n",
-        "tags": [
-          "Board"
-        ],
+        "tags": ["Board"],
         "security": [
           {
-            "OAuth2": [
-              "board:play"
-            ]
+            "OAuth2": ["board:play"]
           }
         ],
         "parameters": [
@@ -6181,9 +5791,7 @@
       "get": {
         "operationId": "apiBotOnline",
         "summary": "Get online bots",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [],
         "description": "Stream the [online bot users](https://lichess.org/player/bots), as [ndjson](#section/Introduction/Streaming-with-ND-JSON). Throttled to 50 bot users per second.",
         "parameters": [
@@ -6225,14 +5833,10 @@
         "operationId": "botAccountUpgrade",
         "summary": "Upgrade to Bot account",
         "description": "Upgrade a lichess player account into a Bot account. Only Bot accounts can use the Bot API.\n\nThe account **cannot have played any game** before becoming a Bot account. The upgrade is **irreversible**. The account will only be able to play as a Bot.\n\nTo upgrade an account to Bot, use the [official lichess-bot client](https://github.com/ShailChoksi/lichess-bot), or follow these steps:\n- Create an [API access token](https://lichess.org/account/oauth/token/create?scopes[]=bot:play) with \"Play bot moves\" permission.\n- `curl -d '' https://lichess.org/api/bot/account/upgrade -H \"Authorization: Bearer <yourTokenHere>\"`\n\nTo know if an account has already been upgraded, use the [Get my profile API](#operation/accountMe):\nthe `title` field should be set to `BOT`.\n",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [
           {
-            "OAuth2": [
-              "bot:play"
-            ]
+            "OAuth2": ["bot:play"]
           }
         ],
         "responses": {
@@ -6272,14 +5876,10 @@
         "operationId": "botGameStream",
         "summary": "Stream Bot game state",
         "description": " Stream the state of a game being played with the Bot API, as [ndjson](#section/Introduction/Streaming-with-ND-JSON).\n\nUse this endpoint to get updates about the game in real-time, with a single request.\n\nEach line is a JSON object containing a `type` field. Possible values are:\n  - `gameFull` Full game data. All values are immutable, except for the `state` field.\n  - `gameState` Current state of the game. Immutable values not included.\n  - `chatLine` Chat message sent by a user (or the bot itself) in the `room` \"player\" or \"spectator\".\n\n \nThe first line is always of type `gameFull`.",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [
           {
-            "OAuth2": [
-              "bot:play"
-            ]
+            "OAuth2": ["bot:play"]
           }
         ],
         "parameters": [
@@ -6357,14 +5957,10 @@
         "operationId": "botGameMove",
         "summary": "Make a Bot move",
         "description": "Make a move in a game being played with the Bot API.\n\nThe move can also contain a draw offer/agreement.\n",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [
           {
-            "OAuth2": [
-              "bot:play"
-            ]
+            "OAuth2": ["bot:play"]
           }
         ],
         "parameters": [
@@ -6433,14 +6029,10 @@
         "operationId": "botGameChat",
         "summary": "Write in the chat",
         "description": "Post a message to the player or spectator chat, in a game being played with the Bot API.\n",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [
           {
-            "OAuth2": [
-              "bot:play"
-            ]
+            "OAuth2": ["bot:play"]
           }
         ],
         "parameters": [
@@ -6463,20 +6055,14 @@
                 "properties": {
                   "room": {
                     "type": "string",
-                    "enum": [
-                      "player",
-                      "spectator"
-                    ]
+                    "enum": ["player", "spectator"]
                   },
                   "text": {
                     "type": "string",
                     "example": "Thank you for the game!"
                   }
                 },
-                "required": [
-                  "room",
-                  "text"
-                ]
+                "required": ["room", "text"]
               }
             }
           }
@@ -6516,14 +6102,10 @@
         "operationId": "botGameChatGet",
         "summary": "Fetch the game chat",
         "description": "Get the messages posted in the game chat\n",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [
           {
-            "OAuth2": [
-              "bot:play"
-            ]
+            "OAuth2": ["bot:play"]
           }
         ],
         "parameters": [
@@ -6564,14 +6146,10 @@
         "operationId": "botGameAbort",
         "summary": "Abort a game",
         "description": "Abort a game being played with the Bot API.\n",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [
           {
-            "OAuth2": [
-              "bot:play"
-            ]
+            "OAuth2": ["bot:play"]
           }
         ],
         "parameters": [
@@ -6622,14 +6200,10 @@
         "operationId": "botGameResign",
         "summary": "Resign a game",
         "description": "Resign a game being played with the Bot API.\n",
-        "tags": [
-          "Bot"
-        ],
+        "tags": ["Bot"],
         "security": [
           {
-            "OAuth2": [
-              "bot:play"
-            ]
+            "OAuth2": ["bot:play"]
           }
         ],
         "parameters": [
@@ -6680,14 +6254,10 @@
         "operationId": "challengeList",
         "summary": "List your challenges",
         "description": "Get a list of challenges created by or targeted at you.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:read"
-            ]
+            "OAuth2": ["challenge:read"]
           }
         ],
         "responses": {
@@ -6733,16 +6303,10 @@
         "operationId": "challengeCreate",
         "summary": "Create a challenge",
         "description": "Challenge someone to play. The targeted player can choose to accept or decline.\n\nIf the challenge is accepted, you will be notified on the [event stream](#operation/apiStreamEvent)\nthat a new game has started. The game ID will be the same as the challenge ID.\n\nIf you also have an OAuth token with `challenge:write` scope for the receiving user,\nyou can make them accept the challenge immediately by setting the `acceptByToken` field.\n\nChallenges for realtime games (not correspondence) expire after 20s if not accepted.\nTo prevent that, use the `keepAliveStream` flag described below.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:write",
-              "bot:play",
-              "board:play"
-            ]
+            "OAuth2": ["challenge:write", "bot:play", "board:play"]
           }
         ],
         "parameters": [
@@ -6792,11 +6356,7 @@
                   "color": {
                     "type": "string",
                     "description": "Which color you get to play",
-                    "enum": [
-                      "random",
-                      "white",
-                      "black"
-                    ],
+                    "enum": ["random", "white", "black"],
                     "default": "random"
                   },
                   "variant": {
@@ -6862,16 +6422,10 @@
         "operationId": "challengeAccept",
         "summary": "Accept a challenge",
         "description": "Accept an incoming challenge.\n\nYou should receive a `gameStart` event on the [incoming events stream](#operation/apiStreamEvent).\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:write",
-              "bot:play",
-              "board:play"
-            ]
+            "OAuth2": ["challenge:write", "bot:play", "board:play"]
           }
         ],
         "parameters": [
@@ -6922,16 +6476,10 @@
         "operationId": "challengeDecline",
         "summary": "Decline a challenge",
         "description": "Decline an incoming challenge.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:write",
-              "bot:play",
-              "board:play"
-            ]
+            "OAuth2": ["challenge:write", "bot:play", "board:play"]
           }
         ],
         "parameters": [
@@ -7012,16 +6560,10 @@
         "operationId": "challengeCancel",
         "summary": "Cancel a challenge",
         "description": "Cancel a challenge you sent, or aborts the game if the challenge was accepted, but the game was not yet played.\nNote that the ID of a game is the same as the ID of the challenge that created it.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:write",
-              "bot:play",
-              "board:play"
-            ]
+            "OAuth2": ["challenge:write", "bot:play", "board:play"]
           }
         ],
         "parameters": [
@@ -7080,16 +6622,10 @@
         "operationId": "challengeAi",
         "summary": "Challenge the AI",
         "description": "Start a game with Lichess AI.\n\nYou will be notified on the [event stream](#operation/apiStreamEvent) that a new game has started.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:write",
-              "bot:play",
-              "board:play"
-            ]
+            "OAuth2": ["challenge:write", "bot:play", "board:play"]
           }
         ],
         "requestBody": {
@@ -7130,11 +6666,7 @@
                   "color": {
                     "type": "string",
                     "description": "Which color you get to play",
-                    "enum": [
-                      "random",
-                      "white",
-                      "black"
-                    ],
+                    "enum": ["random", "white", "black"],
                     "default": "random"
                   },
                   "variant": {
@@ -7187,9 +6719,7 @@
         "operationId": "challengeOpen",
         "summary": "Open-ended challenge",
         "description": "Create a challenge that any 2 players can join.\n\nShare the URL of the challenge. the first 2 players to click it will be paired for a game.\n\nThe response body also contains `whiteUrl` and `blackUrl`.\nYou can control which color each player gets by giving them these URLs,\ninstead of the main challenge URL.\n\nOpen challenges expire after 24h.\n\nTo directly pair 2 known players, use [this endpoint](#operation/challengeCreate) instead,\nwith the `acceptByToken` parameter.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [],
         "requestBody": {
           "description": "Parameters of the game",
@@ -7271,14 +6801,10 @@
         "operationId": "challengeStartClocks",
         "summary": "Start clocks of a game",
         "description": "Start the clocks of a game immediately, even if a player has not yet made a move.\n\nRequires the OAuth tokens of both players with `challenge:write` scope.\n\nIf the clocks have already started, the call will have no effect.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:write"
-            ]
+            "OAuth2": ["challenge:write"]
           }
         ],
         "parameters": [
@@ -7335,14 +6861,10 @@
         "operationId": "bulkPairingGet",
         "summary": "View upcoming bulk pairings",
         "description": "Get a list of upcoming bulk pairings you created.\n\nOnly bulk pairings that are scheduled in the future, or that have a clock start scheduled in the future, are listed.\n\nBulk pairings are deleted from the server after the pairings are done and the clocks have started.\n",
-        "tags": [
-          "Bulk pairings"
-        ],
+        "tags": ["Bulk pairings"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:bulk"
-            ]
+            "OAuth2": ["challenge:bulk"]
           }
         ],
         "responses": {
@@ -7373,14 +6895,10 @@
         "operationId": "bulkPairingCreate",
         "summary": "Create a bulk pairing",
         "description": "Schedule many games at once, up to 24h in advance.\n\nOAuth tokens are required for all paired players, with the `challenge:write` scope.\n\nYou can schedule up to 500 games every 10 minutes. [Contact us](mailto:contact@lichess.org) if you need higher limits.\n\nThe entire bulk is rejected if:\n  - a token is missing\n  - a token is present more than once\n  - a token lacks the `challenge:write` scope\n  - a player account is closed\n  - a player is paired more than once\n  - a bulk is already scheduled to start at the same time with the same player\n  - you have 10 scheduled bulks\n  - you have 1000 scheduled games\n\nPartial bulks are never created. Either it all fails, or it all succeeds.\nWhen it fails, it does so with an error message explaining the issue.\nFailed bulks are not counted in the rate limiting, they are free.\nFix the issues, manually or programmatically, then retry to schedule the bulk.\n\nA successful bulk creation returns a JSON bulk document. Its ID can be used for further operations.\n",
-        "tags": [
-          "Bulk pairings"
-        ],
+        "tags": ["Bulk pairings"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:bulk"
-            ]
+            "OAuth2": ["challenge:bulk"]
           }
         ],
         "requestBody": {
@@ -7469,14 +6987,10 @@
         "operationId": "bulkPairingStartClocks",
         "summary": "Manually start clocks",
         "description": "Immediately start all clocks of the games of a bulk pairing.\n\nThis overrides the `startClocksAt` value of an existing bulk pairing.\n\nIf the games have not yet been created (`bulk.pairAt` is in the future), then this does nothing.\n\nIf the clocks have already started (`bulk.startClocksAt` is in the past), then this does nothing.\n",
-        "tags": [
-          "Bulk pairings"
-        ],
+        "tags": ["Bulk pairings"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:bulk"
-            ]
+            "OAuth2": ["challenge:bulk"]
           }
         ],
         "parameters": [
@@ -7528,14 +7042,10 @@
         "operationId": "bulkPairingDelete",
         "summary": "Cancel a bulk pairing",
         "description": "Cancel and delete a bulk pairing that is scheduled in the future.\n\nIf the games have already been created, then this does nothing.\n\nCanceling a bulk pairing does not refund the rate limit cost of that bulk pairing.\n",
-        "tags": [
-          "Bulk pairings"
-        ],
+        "tags": ["Bulk pairings"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:bulk"
-            ]
+            "OAuth2": ["challenge:bulk"]
           }
         ],
         "parameters": [
@@ -7587,14 +7097,10 @@
         "operationId": "roundAddTime",
         "summary": "Add time to the opponent clock",
         "description": "Add seconds to the opponent's clock. Can be used to create games with time odds.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "challenge:write"
-            ]
+            "OAuth2": ["challenge:write"]
           }
         ],
         "parameters": [
@@ -7646,14 +7152,10 @@
         "operationId": "adminChallengeTokens",
         "summary": "Admin challenge tokens",
         "description": "**For administrators only. You are not allowed to use this endpoint.**\n\nCreate and obtain `challenge:write` tokens for multiple users.\n\nIf a similar token already exists for a user, it is reused. This endpoint is idempotent.\n",
-        "tags": [
-          "Challenges"
-        ],
+        "tags": ["Challenges"],
         "security": [
           {
-            "OAuth2": [
-              "web:mod"
-            ]
+            "OAuth2": ["web:mod"]
           }
         ],
         "requestBody": {
@@ -7674,10 +7176,7 @@
                     "example": "FIDE tournament XYZ"
                   }
                 },
-                "required": [
-                  "users",
-                  "description"
-                ]
+                "required": ["users", "description"]
               }
             }
           }
@@ -7722,14 +7221,10 @@
         "operationId": "inboxUsername",
         "summary": "Send a private message",
         "description": "Send a private message to another player.\n",
-        "tags": [
-          "Messaging"
-        ],
+        "tags": ["Messaging"],
         "security": [
           {
-            "OAuth2": [
-              "msg:write"
-            ]
+            "OAuth2": ["msg:write"]
           }
         ],
         "parameters": [
@@ -7755,9 +7250,7 @@
                     "example": "Thank you for the game!"
                   }
                 },
-                "required": [
-                  "text"
-                ]
+                "required": ["text"]
               }
             }
           }
@@ -7791,9 +7284,7 @@
         "operationId": "apiCloudEval",
         "summary": "Get cloud evaluation of a position.",
         "description": "Get the cached evaluation of a position, if available.\n\nOpening positions have more chances of being available. There are about 7 million positions in the database.\n\nUp to 5 variations may be available. Variants are supported.\n",
-        "tags": [
-          "Analysis"
-        ],
+        "tags": ["Analysis"],
         "security": [],
         "parameters": [
           {
@@ -7866,9 +7357,7 @@
       "get": {
         "operationId": "oauth",
         "summary": "Request authorization code",
-        "tags": [
-          "OAuth"
-        ],
+        "tags": ["OAuth"],
         "security": [],
         "description": "OAuth2 authorization endpoint.\n\nStart the OAuth2 Authorization Code Flow with PKCE by securely\ngenerating two random strings unique to each authorization\nrequest:\n* `code_verifier`\n* `state`\n\nStore these in session storage. Make sure not to reveal `code_verifier`\nto eavesdroppers. Do not show it in URLs, do not abuse `state` to store\nit, do not send it over insecure connections. However it is fine if\nthe user themselves can extract `code_verifier`, which will always be\npossible for fully client-side apps.\n\nThen send the user to this endpoint. They will be prompted to grant\nauthorization and then be redirected back to the given `redirect_uri`.\n\nIf the authorization failed, the following query string parameters will\nbe appended to the redirection:\n* `error`, in particular with value `access_denied` if the user\n   cancelled authorization\n* `error_description` to aid debugging\n* `state`, exactly as passed in the `state` parameter\n\nIf the authorization succeeded, the following query string parameters\nwill be appended to the redirection:\n* `code`, containing a fresh short-lived authorization code\n* `state`, exactly as passed in the `state` parameter\n\nNext, to defend against cross site request forgery, check that the\nreturned `state` matches the `state` you originally generated.\n\nFinally, continue by using the authorization code to\n[obtain an access token](#operation/apiToken).\n",
         "parameters": [
@@ -7946,9 +7435,7 @@
       "post": {
         "operationId": "apiToken",
         "summary": "Obtain access token",
-        "tags": [
-          "OAuth"
-        ],
+        "tags": ["OAuth"],
         "security": [],
         "description": "OAuth2 token endpoint. Exchanges an authorization code for an access token.\n",
         "requestBody": {
@@ -8033,9 +7520,7 @@
         "operationId": "apiTokenDelete",
         "summary": "Revoke access token",
         "description": "Revokes the access token sent as Bearer for this request.",
-        "tags": [
-          "OAuth"
-        ],
+        "tags": ["OAuth"],
         "security": [
           {
             "OAuth2": []
@@ -8061,9 +7546,7 @@
         "operationId": "tokenTest",
         "summary": "Test multiple OAuth tokens",
         "description": "For up to 1000 OAuth tokens, \nreturns their associated user ID and scopes,\nor `null` if the token is invalid.\n\nThe method is `POST` so a longer list of tokens can be sent in the request body.\n",
-        "tags": [
-          "OAuth"
-        ],
+        "tags": ["OAuth"],
         "security": [],
         "requestBody": {
           "description": "OAuth tokens separated by commas. Up to 1000.",
@@ -8113,9 +7596,7 @@
         "operationId": "openingExplorerMaster",
         "summary": "Masters database",
         "description": "**Endpoint: <https://explorer.lichess.ovh/masters>**\n\nExample: `curl https://explorer.lichess.ovh/masters?play=d2d4,d7d5,c2c4,c7c6,c4d5`\n",
-        "tags": [
-          "Opening Explorer"
-        ],
+        "tags": ["Opening Explorer"],
         "security": [],
         "parameters": [
           {
@@ -8206,9 +7687,7 @@
         "operationId": "openingExplorerLichess",
         "summary": "Lichess games",
         "description": "**Endpoint: <https://explorer.lichess.ovh/lichess>**\n\nGames sampled from all Lichess players.\n\nExample: `curl https://explorer.lichess.ovh/lichess?variant=standard&speeds=blitz,rapid,classical&ratings=2200,2500&fen=rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR%20w%20KQkq%20-%200%201`\n",
-        "tags": [
-          "Opening Explorer"
-        ],
+        "tags": ["Opening Explorer"],
         "security": [],
         "parameters": [
           {
@@ -8258,13 +7737,7 @@
               "type": "array",
               "items": {
                 "type": "number",
-                "enum": [
-                  1600,
-                  1800,
-                  2000,
-                  2200,
-                  2500
-                ]
+                "enum": [1600, 1800, 2000, 2200, 2500]
               }
             }
           },
@@ -8348,9 +7821,7 @@
         "operationId": "openingExplorerPlayer",
         "summary": "Player games",
         "description": "**Endpoint: <https://explorer.lichess.ovh/player>**\n\nGames of a Lichess player.\n\nResponds with a stream of newline delimited JSON. Will start indexing\non demand, immediately respond with the current results, and stream\nmore updates until indexing is complete. The stream is throttled\nand deduplicated. Empty lines may be sent to avoid timeouts.\n\nWill index new games at most once per minute, and revisit previously\nongoing games at most once every day.\n\nExample: `curl https://explorer.lichess.ovh/player?player=revoof&color=white&play=d2d4,d7d5&recentGames=1`\n",
-        "tags": [
-          "Opening Explorer"
-        ],
+        "tags": ["Opening Explorer"],
         "security": [],
         "parameters": [
           {
@@ -8409,10 +7880,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "casual",
-                  "rated"
-                ]
+                "enum": ["casual", "rated"]
               }
             }
           },
@@ -8485,9 +7953,7 @@
         "operationId": "openingExplorerMasterGame",
         "summary": "OTB master game",
         "description": "**Endpoint: `https://explorer.lichess.ovh/masters/pgn/{gameId}`**\n\nExample: `curl https://explorer.lichess.ovh/masters/pgn/aAbqI4ey`\n",
-        "tags": [
-          "Opening Explorer"
-        ],
+        "tags": ["Opening Explorer"],
         "security": [],
         "parameters": [
           {
@@ -8531,9 +7997,7 @@
         "operationId": "tablebaseStandard",
         "summary": "Tablebase lookup",
         "description": "**Endpoint: <https://tablebase.lichess.ovh>**\n\nExample: `curl http://tablebase.lichess.ovh/standard?fen=4k3/6KP/8/8/8/8/7p/8_w_-_-_0_1`\n",
-        "tags": [
-          "Tablebase"
-        ],
+        "tags": ["Tablebase"],
         "security": [],
         "parameters": [
           {
@@ -8578,9 +8042,7 @@
         "operationId": "tablebaseAtomic",
         "summary": "Tablebase lookup for Atomic chess",
         "description": "**Endpoint: <https://tablebase.lichess.ovh>**\n",
-        "tags": [
-          "Tablebase"
-        ],
+        "tags": ["Tablebase"],
         "responses": {
           "200": {
             "description": "The tablebase information for the position in atomic chess.",
@@ -8613,9 +8075,7 @@
         "operationId": "antichessAtomic",
         "summary": "Tablebase lookup for Antichess",
         "description": "**Endpoint: <https://tablebase.lichess.ovh>**\n",
-        "tags": [
-          "Tablebase"
-        ],
+        "tags": ["Tablebase"],
         "responses": {
           "200": {
             "description": "The tablebase information for the position in atomic chess.",
@@ -8760,13 +8220,7 @@
           },
           "status": {
             "type": "string",
-            "enum": [
-              "created",
-              "offline",
-              "canceled",
-              "declined",
-              "accepted"
-            ]
+            "enum": ["created", "offline", "canceled", "declined", "accepted"]
           },
           "challenger": {
             "$ref": "#/components/schemas/ChallengeUser"
@@ -8839,11 +8293,7 @@
           },
           "color": {
             "type": "string",
-            "enum": [
-              "white",
-              "black",
-              "random"
-            ]
+            "enum": ["white", "black", "random"]
           },
           "perf": {
             "type": "object",
@@ -8858,10 +8308,7 @@
           },
           "direction": {
             "type": "string",
-            "enum": [
-              "in",
-              "out"
-            ]
+            "enum": ["in", "out"]
           },
           "initialFen": {
             "type": "string"
@@ -9037,12 +8484,7 @@
                 "type": "number"
               }
             },
-            "required": [
-              "inaccuracy",
-              "mistake",
-              "blunder",
-              "acpl"
-            ]
+            "required": ["inaccuracy", "mistake", "blunder", "acpl"]
           },
           "team": {
             "type": "string"
@@ -9092,10 +8534,7 @@
           },
           "winner": {
             "type": "string",
-            "enum": [
-              "white",
-              "black"
-            ]
+            "enum": ["white", "black"]
           },
           "opening": {
             "type": "object",
@@ -9145,11 +8584,7 @@
                   "properties": {
                     "name": {
                       "type": "string",
-                      "enum": [
-                        "Inaccuracy",
-                        "Mistake",
-                        "Blunder"
-                      ]
+                      "enum": ["Inaccuracy", "Mistake", "Blunder"]
                     },
                     "comment": {
                       "type": "string",
@@ -9158,9 +8593,7 @@
                   }
                 }
               },
-              "required": [
-                "eval"
-              ]
+              "required": ["eval"]
             }
           },
           "tournament": {
@@ -9644,17 +9077,8 @@
             "initialPly": 123,
             "plays": 1970,
             "rating": 2022,
-            "solution": [
-              "e1e7",
-              "f4f6",
-              "e7f6"
-            ],
-            "themes": [
-              "short",
-              "queenRookEndgame",
-              "endgame",
-              "mateIn2"
-            ]
+            "solution": ["e1e7", "f4f6", "e7f6"],
+            "themes": ["short", "queenRookEndgame", "endgame", "mateIn2"]
           }
         }
       },
@@ -9760,36 +9184,14 @@
           {
             "name": "Bullet",
             "points": [
-              [
-                2011,
-                0,
-                8,
-                1472
-              ],
-              [
-                2011,
-                0,
-                9,
-                1332
-              ],
-              [
-                2011,
-                8,
-                12,
-                1314
-              ]
+              [2011, 0, 8, 1472],
+              [2011, 0, 9, 1332],
+              [2011, 8, 12, 1314]
             ]
           },
           {
             "name": "Blitz",
-            "points": [
-              [
-                2011,
-                7,
-                29,
-                1332
-              ]
-            ]
+            "points": [[2011, 7, 29, 1332]]
           }
         ]
       },
@@ -10982,10 +10384,7 @@
             "example": 3129
           },
           "location": {
-            "type": [
-              "string",
-              "null"
-            ],
+            "type": ["string", "null"],
             "example": "Planet Earth"
           }
         }
@@ -11003,10 +10402,7 @@
             "type": "string"
           },
           "title": {
-            "type": [
-              "string",
-              "null"
-            ]
+            "type": ["string", "null"]
           },
           "rating": {
             "type": "number"
@@ -11159,10 +10555,7 @@
           },
           "room": {
             "type": "string",
-            "enum": [
-              "player",
-              "spectator"
-            ]
+            "enum": ["player", "spectator"]
           },
           "username": {
             "type": "string"
@@ -11171,12 +10564,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "type",
-          "room",
-          "username",
-          "text"
-        ]
+        "required": ["type", "room", "username", "text"]
       },
       "GameEventInfo": {
         "type": "object",
