@@ -1,0 +1,19 @@
+{
+  "name": "lichess-openapi",
+  "version": "1.0.0",
+  "description": "[lichess-api.yaml](https://github.com/lichess-org/api/blob/master/doc/specs/lichess-api.yaml)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/audiBookning/lichess-openapi.git"
+  },
+  "author": "audiBookning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/audiBookning/lichess-openapi/issues"
+  },
+  "homepage": "https://github.com/audiBookning/lichess-openapi#readme"
+}
